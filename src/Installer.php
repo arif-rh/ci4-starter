@@ -45,8 +45,8 @@ class Installer
     private static function setupThemes()
     {
         // Copy Themes Library
-        copy('vendor/arif-rh/ci4-themes-material_kit/src/Config/Themes.php', static::APPFOLDER.'/Config/Themes.php');
-        copy('vendor/arif-rh/ci4-themes-material_kit/src/Controllers/Material.php', static::APPFOLDER.'/Controllers/Material.php');
+        copy('vendor/arif-rh/ci4-themes-material-kit/src/Config/Themes.php', static::APPFOLDER.'/Config/Themes.php');
+        copy('vendor/arif-rh/ci4-themes-material-kit/src/Controllers/Material.php', static::APPFOLDER.'/Controllers/Material.php');
 
         self::recursiveCopy('vendor/arif-rh/ci4-themes-material_kit/src/Views', static::APPFOLDER.'./Views');
         self::recursiveCopy('vendor/arif-rh/ci4-themes-material_kit/public/themes', static::FCFOLDER.'./themes');
