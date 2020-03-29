@@ -15,7 +15,7 @@
 	},
 	"autoload": {
 		"psr-4": {
-			"Arifrh\\CI4Starter": "src"
+			"Arifrh\\CI4Starter\\": "src"
 		}
 	},
 	"autoload-dev": {
