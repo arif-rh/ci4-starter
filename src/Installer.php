@@ -26,11 +26,19 @@ class Installer
         // Set 404 overide route
         $file = static::APPFOLDER.'/Config/Routes.php';
         $contents = file_get_contents($file);
+
         $contents = str_replace(
             '$routes->setDefaultController(\'Home\');',
             '$routes->setDefaultController(\'Material\');',
             $contents
         );
+
+        $contents = str_replace(
+            '$routes->get(\'/\', \'Home::index\');',
+            '$routes->get(\'/\', \'Material::index\');',
+            $contents
+        );
+
         file_put_contents($file, $contents);
 
         self::setupThemes();
