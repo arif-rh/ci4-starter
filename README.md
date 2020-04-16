@@ -15,5 +15,6 @@ Copy `env` to `.env` and tailor for your app, specifically the `baseURL` and any
 
 ## Features
 
+- Using Dynamic Model with Built-in Relationship feature [DynaModel](https://github.com/arif-rh/ci4-dynamic-model)
 - Customize layout based on [CI4 Themes](https://github.com/arif-rh/ci4-themes)
 - Included default theme using [Free Bootstrap 4 Material Design UI Kit](https://www.creative-tim.com/product/material-kit)
