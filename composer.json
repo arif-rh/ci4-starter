@@ -7,7 +7,7 @@
 	"require": {
 		"php": ">=7.2",
 		"codeigniter4/framework": "^4",
-		"arif-rh/ci4-dynamic-model": "dev-master",
+		"arif-rh/ci4-dynamic-model": "0.1.*",
 		"arif-rh/ci4-themes-material-kit": "^1.0"
 	},
 	"require-dev": {
