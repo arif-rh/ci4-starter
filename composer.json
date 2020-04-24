@@ -6,13 +6,15 @@
 	"license": "MIT",
 	"require": {
 		"php": ">=7.2",
-		"codeigniter4/framework": "^4",
-		"arif-rh/ci4-dynamic-model": "0.1.*",
+		"codeigniter4/framework": "^4.0",
+		"arif-rh/ci4-dynamic-model": "^0.1",
 		"arif-rh/ci4-themes-material-kit": "^1.0"
 	},
 	"require-dev": {
 		"mikey179/vfsstream": "1.6.*",
-		"phpunit/phpunit": "8.5.*"
+		"phpunit/phpunit": "^8.5",
+		"php-coveralls/php-coveralls": "^2.2",
+		"arif-rh/git-hooks": "^0.1"
 	},
 	"autoload": {
 		"psr-4": {
@@ -26,11 +28,16 @@
 	},
 	"scripts": {
 		"test": "phpunit",
+		"post-install-cmd": [
+            "Arifrh\\GitHooks\\PreCommit::CI4"
+        ],
 		"post-update-cmd": [
-			"@composer dump-autoload"
-		],
+            "@composer dump-autoload",
+            "Arifrh\\GitHooks\\PreCommit::CI4"
+        ],
 		"post-create-project-cmd": [
-            "Arifrh\\CI4Starter\\Installer::postInstall"
+			"Arifrh\\CI4Starter\\Installer::postInstall",
+			"Arifrh\\GitHooks\\PreCommit::CI4"
         ]
 	}
 }

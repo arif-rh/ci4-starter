@@ -60,9 +60,11 @@ class Installer
         self::recursiveCopy('vendor/arif-rh/ci4-themes-material-kit/public/themes/material-kit', static::FCFOLDER.'/themes/material-kit');
     }
 
-    private static function composerUpdate()
+    private static function initialCommit()
     {
-        passthru('composer update');
+        passthru('git init');
+        passthru('git add .');
+        passthru('git commit -m "initial Commit"');
     }
 
     /**
@@ -72,10 +74,12 @@ class Installer
      */
     private static function showMessage(Event $event = null)
     {
+		self::initialCommit();
+
         $io = $event->getIO();
         $io->write('==================================================');
         $io->write(
-            '<info>CI4 Project is Ready!</info>'
+            '<info>CodeIgniter4 Project is Ready!</info>'
         );
         $io->write('==================================================');
     }
